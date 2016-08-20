@@ -1,0 +1,297 @@
+<!--
+To change this template use Tools | Templates.
+-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Gotcha: Alexia and Marco</title>
+    
+    <!-- Do This -->
+    <!--Link the AJAX api CDN from google-->
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+     
+    <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+    
+   
+       <style>
+        #gameCard td{
+               padding:0; margin:0;
+               background-color:white;
+                }
+
+        #gameCard {
+               background-color:white;
+               border-collapse: collapse;
+                }
+       body{
+           color: white;
+           font-family: 'Oswald', Arial;
+           background-color:black;
+       }
+
+    </style>
+    
+</head>
+<body>
+<center>
+    <div id="container">
+        <div id="header">
+             <h1>Gotcha:  </h1>
+             
+            <center>Check behind every door. Choose Carefully there might be an unpleasant surprise.</center>
+            
+             
+             <div id="scoreOut">Score: </div>
+                <FORM>
+                    <INPUT TYPE="button" onClick="history.go(0)" VALUE="Restart">
+                </FORM>
+            </div>
+            
+        <div id="content">
+            
+            <!-- ****Do This**** -->
+            <!--make the table 5x10-->
+            
+           <table  id="gameCard">
+               
+                    <tr>
+                        <td id="cell00">&nbsp;</td>
+                        <td id="cell01">&nbsp;</td>
+                        <td id="cell02">&nbsp;</td>
+                        <td id="cell03">&nbsp;</td>
+                        <td id="cell04">&nbsp;</td>
+                        <td id="cell05">&nbsp;</td>
+                        <td id="cell06">&nbsp;</td>
+                        <td id="cell07">&nbsp;</td>
+                        <td id="cell08">&nbsp;</td>
+                        <td id="cell09">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td id="cell10">&nbsp;</td>
+                        <td id="cell11">&nbsp;</td>
+                        <td id="cell12">&nbsp;</td>
+                        <td id="cell13">&nbsp;</td>
+                        <td id="cell14">&nbsp;</td>
+                        <td id="cell15">&nbsp;</td>
+                        <td id="cell16">&nbsp;</td>
+                        <td id="cell17">&nbsp;</td>
+                        <td id="cell18">&nbsp;</td>
+                        <td id="cell19">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td id="cell20">&nbsp;</td>
+                        <td id="cell21">&nbsp;</td>
+                        <td id="cell22">&nbsp;</td>
+                        <td id="cell23">&nbsp;</td>
+                        <td id="cell24">&nbsp;</td>
+                        <td id="cell25">&nbsp;</td>
+                        <td id="cell26">&nbsp;</td>
+                        <td id="cell27">&nbsp;</td>
+                        <td id="cell28">&nbsp;</td>
+                        <td id="cell29">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td id="cell30">&nbsp;</td>
+                        <td id="cell31">&nbsp;</td>
+                        <td id="cell32">&nbsp;</td>
+                        <td id="cell33">&nbsp;</td>
+                        <td id="cell34">&nbsp;</td>
+                        <td id="cell35">&nbsp;</td>
+                        <td id="cell36">&nbsp;</td>
+                        <td id="cell37">&nbsp;</td>
+                        <td id="cell38">&nbsp;</td>
+                        <td id="cell39">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td id="cell40">&nbsp;</td>
+                        <td id="cell41">&nbsp;</td>
+                        <td id="cell42">&nbsp;</td>
+                        <td id="cell43">&nbsp;</td>
+                        <td id="cell44">&nbsp;</td>
+                        <td id="cell45">&nbsp;</td>
+                        <td id="cell46">&nbsp;</td>
+                        <td id="cell47">&nbsp;</td>
+                        <td id="cell48">&nbsp;</td>
+                        <td id="cell49">&nbsp;</td>
+                    </tr>
+          
+                    
+              
+                 
+                
+            </table>
+        </div>
+   
+    
+    <br>
+    
+    
+    
+</center>
+    
+    
+<!--Start Script Here>-->  
+<script>
+            
+            
+     
+//!!******Do This******!!
+//Create and initialize the variable named score to 0.            
+var score = 0;
+                 
+function game(){
+        
+      //!!******Do This******!!
+      // Set the max length and Width vars
+      // 
+      // 
+      // 
+    var maxLength = 5;
+    var maxWidth = 10;
+    
+//!!******Do This******!!
+//Create random number between 1-9
+function CreateRandom() {
+         return Math.floor((Math.random() * 9) + 1);
+}
+        
+
+//function to create an image
+function CreateRock() {
+    
+    var randomNumber = CreateRandom();
+    var image = "test";
+    
+    //!!******Do This******!!
+    //Create/initialize the variable named image
+    
+    //add if/ else if statements to print an image 1-9. 1 being the got class 
+    //and the rest will be the safe class.
+    
+    /* Here is what you will use for the two image variables data
+     
+       image = "<img src='rock.jpeg' class='safe' height='90' width='90' style='padding:0; margin:0; background-color:black;'>";
+       image = "<img src='rock.jpeg' class='got' height='90' width='90'>";
+   
+     */
+         
+    if(randomNumber == 1){
+        image = "<img src='door.png' class='got' height='90' width='90'style='background-color:black;'>";
+    }
+    else if(randomNumber == 2){
+        image = "<img src='door.png' class='safe' height='90' width='90'style='padding:0; margin:0; background-color:black;'>";
+    }
+    else if(randomNumber == 3){
+        image = "<img src='door.png' class='safe' height='90' width='90'style='padding:0; margin:0; background-color:black;'>";
+    }
+    else if(randomNumber == 4){
+        image = "<img src='door.png' class='safe' height='90' width='90'style='padding:0; margin:0; background-color:black;'>";
+    }
+    else if(randomNumber == 5){
+        image = "<img src='door.png' class='safe' height='90' width='90'style='padding:0; margin:0; background-color:black;'>";
+    }
+    else if(randomNumber == 6){
+        image = "<img src='door.png' class='safe' height='90' width='90'style='padding:0; margin:0; background-color:black;'>";
+    }
+    else if(randomNumber == 7){
+        image = "<img src='door.png' class='safe' height='90' width='90'style='padding:0; margin:0; background-color:black;'>";
+    }
+    else if(randomNumber == 8){
+        image = "<img src='door.png' class='safe' height='90' width='90'style='padding:0; margin:0; background-color:black;'>";
+    }
+    else if(randomNumber == 9){
+        image = "<img src='door.png' class='safe' height='90' width='90'style='padding:0; margin:0; background-color:black;'>";
+    }
+    return image;
+    
+}
+
+//!!******Do This******!!         
+//Use for loops to update the table 
+//update the 
+
+    function UpdateTable() {
+    // Iterate over each cell and set a random number
+    for (var i = 0; i < maxLength; i++) {
+        for (var j = 0; j < maxWidth; j++) {
+            tmp = 'cell' + i + j;
+            document.getElementById(tmp).innerHTML = CreateRock();
+        }
+    }
+    
+    
+    
+}
+    
+    
+
+            
+// no need to touch this
+//Use The function update table
+UpdateTable();
+            
+
+            
+//!!******Do This******!!
+
+//use the on.click function for the classes "safe and got"
+//
+
+        $( ".safe" ).click(function() {
+          
+          score += 5;
+           $(this).attr("src", "Unicorn.png");
+          document.getElementById("scoreOut").innerHTML = "<h1>Score :" + score;
+        
+        });
+         
+         $( ".got" ).click(function() {
+             $( ".got" ).attr("src", "scream.png");
+             
+              setTimeout(function () 
+               
+               {alert("Your Score is " + score + " you lost")
+                window.location.href = "index.html";  
+                
+                           }, 2000);  
+               
+        
+         
+        });
+//use a .attr to make changes when clicked 
+
+     
+//for the safe class you will change the opacity
+//this is the code.... $(this).attr("style", "opacity: 0.4;"); 
+// and you will add score of 1
+
+     
+
+// for the got class you will change the image to the spider
+// this is the code......$( ".got" ).attr("src", "spider.jpg");
+// also you will add a delayed alert using timeout that says they lost
+          
+          
+        
+        
+       
+
+//end of game() function    
+}
+     
+    
+            
+    game();
+
+    
+    
+//end Script Tag     
+</script>
+    
+    
+ 
+</body>
+    
+</html>
